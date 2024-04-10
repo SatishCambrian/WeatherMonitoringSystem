@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WeatherMonitoringSystemLibrary.Interface;
+using WeatherMonitoringSystemLibrary.Interfaces;
 
 namespace WeatherMonitoringSystemLibrary.Interfaces
 {

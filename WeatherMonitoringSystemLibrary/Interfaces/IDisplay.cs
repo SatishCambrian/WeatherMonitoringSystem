@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeatherMonitoringSystemLibrary.Interface
+namespace WeatherMonitoringSystemLibrary.Interfaces
 {
     public interface IDisplay
     {
@@ -13,5 +13,10 @@ namespace WeatherMonitoringSystemLibrary.Interface
         /// </summary>
         void Display();
 
+    }
+
+    public interface IObserver
+    {
+        //void update(double temperature, double humidity, double pressure);
     }
 }
