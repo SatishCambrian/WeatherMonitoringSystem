@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherMonitoringSystemLibrary.Interface
 {
-    internal interface IDisplay
+    public interface IDisplay
     {
         /// <summary>
         /// Interface for all Display Elements
