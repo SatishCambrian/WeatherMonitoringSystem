@@ -11,7 +11,7 @@ namespace WeatherMonitoringSystemLibrary.Interface
         /// <summary>
         /// Interface for all Display Elements
         /// </summary>
-        void display();
+        void Display();
 
     }
 }
