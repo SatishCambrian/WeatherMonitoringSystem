@@ -7,18 +7,22 @@ using WeatherMonitoringSystemLibrary.Interfaces;
 
 namespace WeatherMonitoringSystemLibrary
 {
+
+    /// <summary>
+    /// Concrete Observer for displaying weather forecast
+    /// </summary>
     public class ForecastDisplay: IDisplay
     {
-        private readonly IWeatherDataSubject _weatherDataSubject;
+        private readonly IWeatherDataSubject weatherDataSubject;
         public ForecastDisplay(IWeatherDataSubject weatherDataSubject)
         {
-            this._weatherDataSubject = weatherDataSubject;
+            this.weatherDataSubject = weatherDataSubject;
             weatherDataSubject.RegisterObserver(this);
         }
 
         public void Display()
         {
-            Console.WriteLine("Weather is Rainy.")
+            Console.WriteLine("Weather is Rainy.");
         }
     }
 }

@@ -7,20 +7,57 @@ using WeatherMonitoringSystemLibrary.Interfaces;
 
 namespace WeatherMonitoringSystemLibrary
 {
-    public class CurrentConditionDisplay : IDisplay,IWeatherDataSubject
+    public class CurrentConditionDisplay : IWeatherDataSubject,IDisplay
     {
-        private readonly IWeatherDataSubject wtherData;
+        private readonly IWeatherDataSubject dataSubject;
 
-        public CurrentConditionDisplay(IWeatherDataSubject wtherData)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CurrentConditionDisplay"/> class.
+        /// </summary>
+        /// <param name="dataSubject">The subject providing weather data.</param>
+
+        public CurrentConditionDisplay(IWeatherDataSubject dataSubject)
         {
-            this.wtherData = wtherData;
-            wtherData.RegisterObserver(this);
+            this.dataSubject = dataSubject;
+            dataSubject.RegisterObserver(this);
         }
 
+        /// <summary>
+        /// Displays the current weather conditions.
+        /// </summary>
         public void Display()
         {
-            Console.WriteLine($"Current conditions: {wtherData.GetTemperature()}Cdegrees and {wtherData.GetHumidity()}% humidity");
+            Console.WriteLine($"Current conditions: {dataSubject.GetTemperature()}C degrees and {dataSubject.GetHumidity()}% humidity");
 
+        }
+
+
+        /// <summary>
+        /// Notifies observers of changes in weather data (not implemented).
+        /// </summary>
+        public void NotifyObservers()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// Registers an observer (not implemented).
+        /// </summary>
+        /// <param name="_observer">The observer to register.</param>
+        public void RegisterObserver(IDisplay _observer)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// Removes an observer (not implemented).
+        /// </summary>
+        /// <param name="_observer">The observer to remove.</param>
+        public void RemoveObserver(IDisplay _observer)
+        {
+            throw new NotImplementedException();
         }
     }
 }
