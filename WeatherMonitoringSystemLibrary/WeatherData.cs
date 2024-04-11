@@ -10,7 +10,9 @@ namespace WeatherMonitoringSystemLibrary
     /// <summary>
     /// Singletion class that collects Weather Data. Then Notifies Observers
     /// </summary>
+    
 
+    //Singleton Class
     public class WeatherData : IWeatherDataSubject
     {
         private static WeatherData instance;
@@ -50,6 +52,31 @@ namespace WeatherMonitoringSystemLibrary
             }
         }
 
-       // public void
+
+        public void UpdateWeatherConditions()
+        {
+            temperature = GenerateRandomDouble(0, 99);
+            humidity = GenerateRandomDouble(0, 100);
+            pressure = GenerateRandomDouble(900, 1000);
+            NotifyObservers();
+        }
+
+        private double GenerateRandomDouble(double min, double max)
+        {
+            return rand.NextDouble() * (max - min) + min;
+        }
+
+        public double GetTemperature()
+        {
+            return temperature;
+        }
+        public double GetHumidity()
+        {
+            return humidity;
+        }
+        public double GetPressure()
+        {
+            return pressure;
+        }
     }
 }
